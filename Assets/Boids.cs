@@ -29,7 +29,6 @@ public class Boids : MonoBehaviour
             float z = Mathf.Clamp(velocity.z, -maxSpeed, maxSpeed);
 
             Vector3 clampedVelocity = new Vector3(x, y, z);
-            Debug.Log(clampedVelocity * 100);
             Quaternion rotation = Quaternion.LookRotation(clampedVelocity, Vector3.up) * Quaternion.Euler(0f, 90f, 0f);
             b.boidObject.transform.rotation = Quaternion.Slerp(b.boidObject.transform.rotation, rotation, 5f * Time.deltaTime);;
 
